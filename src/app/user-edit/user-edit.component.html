@@ -1,0 +1,43 @@
+<div class="alert alert-success alert-dismissible fade show text-center" role="alert" *ngIf="status == 'success'">
+  <strong>Usuario actualizado correctamente</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class=" container card c-edit">
+
+
+  <div class="card-header">
+
+    <h5 class="text-center">Configuracion de usuario</h5>
+  </div>
+
+  <div class="container ">
+    <form #userEditForm="ngForm" (ngSubmit)="onSubmit(userEditForm)">
+      <div class="row ">
+        <div class=" form-group">
+          <label class="lal " for="">Nombre</label>
+          <input class="col-12 form-control " id="name" type="text" #name="ngModel" [(ngModel)]="user.email " name="name"
+            required pattern="[a-z A-Z]+">
+          <small *ngIf="!name.valid && name.touched" class="invalid-feedback d-block">
+            Nombre no es valido
+          </small>
+        </div>
+        <div class=" form-group ">
+          <label class="lal" for="">Apellido</label>
+          <input class="col-12 form-control" id="surname" type="text" name="surname" #surname="ngModel"
+            [(ngModel)]="user.name" required pattern="[a-z A-Z]+">
+          <small *ngIf="!surname.valid && surname.touched" class="invalid-feedback d-block">
+            Apellido no es valido
+          </small>
+        </div>
+
+
+
+
+        <input type="submit" class="  mt-2 form-control btn btn-info col-12 " value="Completar">
+      </div>
+    </form>
+  </div>
+</div>
