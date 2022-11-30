@@ -17,7 +17,7 @@ aria-hidden="true">
             </div>
             <div class="input-container ic1 col-6">
               <select class="input" id="product_id" formControlName="product_id" name="product_id">
-                <option *ngFor="let tip of Producto" [value]="tip._id">{{tip.name}}</option>
+                <option *ngFor="let tip of Producto" [value]="tip.id">{{tip.name}}</option>
               </select>
               <div class="cut text-center">Tipo activo</div>
             </div>
