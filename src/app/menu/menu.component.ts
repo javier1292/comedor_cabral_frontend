@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   public url: any;
   public empleados: Array<Menu>;
   public empleado: Menu;
-  public identity:any;
+  public identity: any;
   public token: string;
 
   @ViewChild(
@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
   ) {
     this.token = _userService.gettoken();
     this.empleados = []
-   }
+  }
 
   ngOnInit(): void {
     console.log(this._userService.gettoken())
@@ -39,7 +39,7 @@ export class MenuComponent implements OnInit {
     this.getEmpleados();
   }
 
-  delete(id:number){
+  delete(id: number) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton: 'btn btn-success ml-3',
@@ -59,8 +59,8 @@ export class MenuComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        this._empleadosService.deleteEmpleados(id,this.token).subscribe({
-          next:(res)=>{
+        this._empleadosService.deleteEmpleados(id, this.token).subscribe({
+          next: (res) => {
             this.getEmpleados();
             swalWithBootstrapButtons.fire(
               'Eliminado!',
@@ -68,7 +68,7 @@ export class MenuComponent implements OnInit {
               'success'
             )
           },
-          error:(err)=>{
+          error: (err) => {
             console.log(err);
           }
         })
@@ -87,23 +87,24 @@ export class MenuComponent implements OnInit {
 
   getEmpleados() {
     this._empleadosService.getEmpleados(this.token).subscribe({
-      next:(res)=>{
+      next: (res) => {
         if (res.data
-        ) {interface IProduct {id: number}
-type ItemType = {Product: IProduct}
+        ) {
+          interface IProduct { id: number }
+          type ItemType = { Product: IProduct }
           console.log(res.data)
           this.empleados = res.data.flatMap((item: ItemType) => item.Product)
         }
       },
-      error:(err)=>{
+      error: (err) => {
         console.log(err);
       }
-  })
+    })
   }
 
-  CreateMode(){
-    this.addmodal.inView=false;
-    this.addmodal.inEdit=false;
+  CreateMode() {
+    this.addmodal.inView = false;
+    this.addmodal.inEdit = false;
     this.addmodal.form.enable();
     this.addmodal.Clear();
   }

@@ -18,7 +18,7 @@ export class MesasService {
     let headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
     .set('Authorization', 'Bearer ' +token );
-    return this._http.get(this.url + 'menu',{ headers: headers });
+    return this._http.get(this.url + 'table',{ headers: headers });
   }
 
   addEmpleado(activo: any,token:string): Observable<any> {
@@ -26,7 +26,7 @@ export class MesasService {
     let headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
     .set('Authorization', 'Bearer ' +token );
-    return this._http.post(this.url + 'menu', params, { headers: headers });
+    return this._http.post(this.url + 'table', params, { headers: headers });
   }
 
   editEmpleados(cliente: any , id:any, token:any): Observable<any> {
@@ -35,19 +35,19 @@ export class MesasService {
     .set('Content-Type', 'application/json')
     .set('Authorization', 'Bearer ' +token );
 
-    return this._http.post(this.url + 'menu/'+id+'/update', params, { headers: headers });
+    return this._http.post(this.url + 'table/'+id+'/update', params, { headers: headers });
   }
   getClienteByID(id: any, token:any):Observable<any>{
     let headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
     .set('Authorization', token);
-    return this._http.get(this.url+'menu/'+id+'/show',{headers: headers});
+    return this._http.get(this.url+'table/'+id+'/show',{headers: headers});
   }
 
   deleteEmpleados(clienteid: number, token:any): Observable<any> {
     let headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
     .set('Authorization', 'Bearer ' +token );
-    return this._http.delete(this.url + 'menu/'+clienteid+'/delete', {headers: headers});
+    return this._http.delete(this.url + 'table/'+clienteid+'/delete', {headers: headers});
   }
 }
