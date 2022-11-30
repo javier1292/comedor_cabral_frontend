@@ -27,7 +27,7 @@
         <div class=" form-group ">
           <label class="lal" for="">Apellido</label>
           <input class="col-12 form-control" id="surname" type="text" name="surname" #surname="ngModel"
-            [(ngModel)]="user.name" required pattern="[a-z A-Z]+">
+            [(ngModel)]="user.nombre" required pattern="[a-z A-Z]+">
           <small *ngIf="!surname.valid && surname.touched" class="invalid-feedback d-block">
             Apellido no es valido
           </small>

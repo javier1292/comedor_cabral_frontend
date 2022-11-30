@@ -1,5 +1,18 @@
 <div *ngIf="identity">
-  <p>ordenes works!</p>
+
+  <button (click)="CreateMode()" class="btn btn-outline-primary m-1" type="" data-toggle="modal"
+  [attr.data-target]="'#modalForm'">Crear nuevo</button>
+
+<app-tabla [body]="empleados" [headers]="[
+'#',
+'Capacidad',
+'Fecha_Creado',
+'update_at',
+'acciones'
+]" (OnDelete)="delete($event)"></app-tabla>
+
+<!-- Modal -->
+<app-add-ordenes (onSave)="getEmpleados()"></app-add-ordenes>
 
 </div>
 

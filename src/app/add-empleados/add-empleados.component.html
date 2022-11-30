@@ -1,0 +1,46 @@
+
+<div class="modal fade" id="{{'modalForm'}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header d-flex flex-column ">
+      <div class="modal-header" hidden>
+        <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <div class="form">
+          <form [formGroup]="form" class="row" (ngSubmit)="onSubmit()">
+            <div class="title col-12">Empleados</div>
+            <div class="input-container ic1 col-6">
+              <input id="first_name" formControlName="first_name" name="first_name" class="input" type="text" />
+              <div class="cut text-center">Nombre</div>
+            </div>
+            <div class="input-container ic1 col-6">
+              <input id="last_name" class="input" type="text" placeholder="" formControlName="last_name"
+                name="last_name" />
+              <div class="cut text-center">Apellido</div>
+            </div>
+            <div class="input-container ic1 col-12">
+              <input id="phone" class="input" type="text" placeholder="" formControlName="phone"
+                name="phone" />
+              <div class="cut text-center">Celular</div>
+            </div>
+            <div class="input-container ic1 col-12">
+              <input id="email" class="input" type="text" placeholder=""
+                formControlName="email" name="email" />
+              <div class="cut text-center">Email</div>
+            </div>
+            <div class="input-container ic1 col-12">
+              <input id="address" class="input" type="text" placeholder=""
+                formControlName="address" name="address" />
+              <div class="cut text-center">direccion</div>
+            </div>
+            <button type="submit" class="submit" *ngIf="this.inView === false">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

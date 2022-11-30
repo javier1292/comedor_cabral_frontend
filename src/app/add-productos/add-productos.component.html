@@ -1,0 +1,41 @@
+
+<div class="modal fade" id="{{'modalForm'}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header d-flex flex-column ">
+      <div class="modal-header" hidden>
+        <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <div class="form">
+          <form [formGroup]="form" class="row" (ngSubmit)="onSubmit()">
+            <div class="title col-12">Activo fijo</div>
+            <div class="input-container ic1 col-6">
+              <input id="name" formControlName="name" name="name" class="input" type="text" />
+              <div class="cut text-center">Nombre</div>
+            </div>
+            <div class="input-container ic1 col-6">
+              <input id="description" class="input" type="text" placeholder="" formControlName="description"
+                name="description" />
+              <div class="cut text-center">descripcion</div>
+            </div>
+            <div class="input-container ic1 col-12">
+              <input id="price" class="input" type="number" placeholder="" formControlName="price"
+                name="price" />
+              <div class="cut text-center">precio</div>
+            </div>
+            <div class="input-container ic1 col-12">
+              <input id="category" class="input" type="text" placeholder=""
+                formControlName="category" name="category" />
+              <div class="cut text-center">categoria</div>
+            </div>
+            <button type="submit" class="submit" *ngIf="this.inView === false">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

@@ -19,7 +19,7 @@ export class AppComponent {
 
   constructor(
     private _userService: UserServiceService,
-    private _router: Router,
+    public _router: Router,
     private _route: ActivatedRoute
   ) {
 

@@ -21,7 +21,7 @@ export class UserServiceService {
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     //hacer peticiones ajax
-    return this._http.post(this.url + 'register', params, { headers: headers });
+    return this._http.post(this.url + 'usuarios/store', params, { headers: headers });
   }
   signup(user: any, gettoken = true): Observable<any> {
     user.gettoken = true;

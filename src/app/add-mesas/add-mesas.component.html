@@ -1,0 +1,26 @@
+
+<div class="modal fade" id="{{'modalForm'}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header d-flex flex-column ">
+      <div class="modal-header" hidden>
+        <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <div class="form">
+          <form [formGroup]="form" class="row" (ngSubmit)="onSubmit()">
+            <div class="title col-12">Mesas</div>
+            <div class="input-container ic1 col-6">
+              <input id="capacity" formControlName="capacity" name="capacity" class="input" type="text" />
+              <div class="cut text-center">Capacidad</div>
+            </div>
+            <button type="submit" class="submit" *ngIf="this.inView === false">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

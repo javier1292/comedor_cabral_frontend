@@ -1,1 +1,17 @@
-<p>clientes works!</p>
+<button (click)="CreateMode()" class="btn btn-outline-primary m-1" type="" data-toggle="modal"
+  [attr.data-target]="'#modalForm'">Crear nuevo</button>
+
+<app-tabla [body]="clientes" [headers]="[
+'#',
+'Nombre',
+'Apellido',
+'Email',
+'Phone',
+'Fecha_Creado',
+'update_at',
+'acciones'
+]" (OnDelete)="delete($event)"></app-tabla>
+
+<!-- Modal -->
+<app-add-cliente (onSave)="getClientes()"></app-add-cliente>
+

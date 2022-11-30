@@ -1,0 +1,37 @@
+
+<div class="modal fade" id="{{'modalForm'}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header d-flex flex-column ">
+      <div class="modal-header" hidden>
+        <button type="button" #closebutton class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="container d-flex justify-content-center">
+        <div class="form">
+          <form [formGroup]="form" class="row" (ngSubmit)="onSubmit()">
+            <div class="title col-12">Menu</div>
+            <div class="input-container ic1 col-6">
+              <input id="name" formControlName="name" name="name" class="input" type="text" />
+              <div class="cut text-center">Nombre</div>
+            </div>
+            <div class="input-container ic1 col-6">
+              <select class="input" id="product_id" formControlName="product_id" name="product_id">
+                <option *ngFor="let tip of Producto" [value]="tip._id">{{tip.name}}</option>
+              </select>
+              <div class="cut text-center">Tipo activo</div>
+            </div>
+            <div class="input-container ic1 col-12">
+              <input id="price" class="input" type="text" placeholder=""
+                formControlName="price" name="price" />
+              <div class="cut text-center">precio</div>
+            </div>
+            <button type="submit" class="submit" *ngIf="this.inView === false">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

@@ -7,6 +7,7 @@ import { MesasComponent } from './mesas/mesas.component';
 import { OrdenesComponent } from './ordenes/ordenes.component';
 import { ProductosComponent } from './productos/productos.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
   {path: 'clientes',component:ClientesComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'menu',component:MenuComponent},
   {path: 'mesas',component:MesasComponent},
   {path: '',component:OrdenesComponent},
+  {path: 'registro',component:RegistroComponent},
   {path: 'userEdit',component:UserEditComponent},
   {path: 'productos',component:ProductosComponent},
 ];
